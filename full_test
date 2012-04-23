@@ -1,0 +1,23 @@
+; Read 4 files with aio at different depths
+[global]
+ioengine=libaio
+buffered=0
+bs=12k
+size=512m
+
+[file1]
+size=712m
+iodepth=4
+rw=randread
+directory=/tmp
+
+[file2]
+iodepth=32
+rw=randwrite
+directory=/var/log/fio
+
+[file3]
+iodepth=8
+rw=randrw
+directory=/var/lib/fio
+
