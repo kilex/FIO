@@ -1,0 +1,70 @@
+file1: (g=0): rw=randread, bs=12K-12K/12K-12K, ioengine=libaio, iodepth=4
+file2: (g=0): rw=randread, bs=12K-12K/12K-12K, ioengine=libaio, iodepth=32
+file3: (g=0): rw=randread, bs=12K-12K/12K-12K, ioengine=libaio, iodepth=8
+file4: (g=0): rw=randread, bs=12K-12K/12K-12K, ioengine=libaio, iodepth=16
+Starting 4 processes
+file1: Laying out IO file(s) (1 file(s) / 1512MB)
+file2: Laying out IO file(s) (1 file(s) / 1512MB)
+file3: Laying out IO file(s) (1 file(s) / 1512MB)
+file4: Laying out IO file(s) (1 file(s) / 1512MB)
+
+file1: (groupid=0, jobs=1): err= 0: pid=15804
+  read : io=1512MB, bw=72377KB/s, iops=6031, runt= 21392msec
+    slat (usec): min=3, max=143, avg=13.48, stdev= 4.46
+    clat (usec): min=27, max=223829, avg=647.07, stdev=4516.05
+    bw (KB/s) : min= 1273, max=187224, per=24.49%, avg=70912.56, stdev=72458.42
+  cpu          : usr=0.95%, sys=9.78%, ctx=60585, majf=0, minf=44
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued r/w: total=129024/0, short=0/0
+     lat (usec): 50=0.01%, 100=0.07%, 250=32.36%, 500=55.82%, 750=9.65%
+     lat (usec): 1000=0.70%
+     lat (msec): 2=0.18%, 4=0.27%, 10=0.28%, 20=0.25%, 50=0.18%
+     lat (msec): 100=0.22%, 250=0.03%
+file2: (groupid=0, jobs=1): err= 0: pid=15805
+  read : io=1512MB, bw=144484KB/s, iops=12040, runt= 10716msec
+    slat (usec): min=3, max=122, avg= 9.62, stdev= 4.95
+    clat (usec): min=74, max=159591, avg=2646.18, stdev=10759.94
+    bw (KB/s) : min=110400, max=196200, per=49.77%, avg=144076.75, stdev=21751.56
+  cpu          : usr=2.61%, sys=12.62%, ctx=27441, majf=0, minf=120
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=100.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.1%, 64=0.0%, >=64=0.0%
+     issued r/w: total=129024/0, short=0/0
+     lat (usec): 100=0.02%, 250=8.61%, 500=35.20%, 750=9.30%, 1000=3.90%
+     lat (msec): 2=13.74%, 4=23.93%, 10=3.47%, 20=0.15%, 50=0.42%
+     lat (msec): 100=0.86%, 250=0.41%
+file3: (groupid=0, jobs=1): err= 0: pid=15806
+  read : io=1512MB, bw=90080KB/s, iops=7506, runt= 17188msec
+    slat (usec): min=3, max=141, avg=12.47, stdev= 6.05
+    clat (usec): min=87, max=276027, avg=1051.30, stdev=6222.21
+    bw (KB/s) : min= 5320, max=227952, per=31.30%, avg=90621.97, stdev=103069.64
+  cpu          : usr=1.37%, sys=10.66%, ctx=36728, majf=0, minf=56
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=100.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued r/w: total=129024/0, short=0/0
+     lat (usec): 100=0.01%, 250=5.35%, 500=69.18%, 750=20.70%, 1000=1.81%
+     lat (msec): 2=0.46%, 4=0.51%, 10=0.57%, 20=0.54%, 50=0.39%
+     lat (msec): 100=0.44%, 250=0.03%, 500=0.01%
+file4: (groupid=0, jobs=1): err= 0: pid=15807
+  read : io=1512MB, bw=144673KB/s, iops=12056, runt= 10702msec
+    slat (usec): min=3, max=135, avg= 9.67, stdev= 4.70
+    clat (usec): min=80, max=76450, avg=1315.67, stdev=6859.01
+    bw (KB/s) : min=86031, max=174927, per=50.27%, avg=145543.30, stdev=28108.23
+  cpu          : usr=2.39%, sys=12.90%, ctx=27836, majf=0, minf=72
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued r/w: total=129024/0, short=0/0
+     lat (usec): 100=0.02%, 250=6.64%, 500=38.39%, 750=22.85%, 1000=14.63%
+     lat (msec): 2=16.12%, 4=0.34%, 10=0.04%, 20=0.01%, 100=0.95%
+
+Run status group 0 (all jobs):
+   READ: io=6048MB, aggrb=289507KB/s, minb=74114KB/s, maxb=148144KB/s, mint=10702msec, maxt=21392msec
+
+Disk stats (read/write):
+  md0: ios=522407/487902, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=0/0, aggrmerge=0/0, aggrticks=0/0, aggrin_queue=0, aggrutil=0.00%
+    sdb: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=-nan%
+    sdc: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=-nan%
